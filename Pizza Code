@@ -1,0 +1,33 @@
+print("Welcome to the online pizza ordering app.")
+
+type = str(input)
+available_toppings = ["pepperoni", "beef", "salami", "tomato", "lettuce", "onion", "olive", "blue cheese", "cheddar cheese", "goat cheese"]
+final_toppings = []
+
+if type == "plain" or "pepperoni":
+    print("Alright, making the pizza!")
+    if type == "plain":
+        final_toppings.append("cheddar cheese")
+    elif type == "pepperoni":
+        final_toppings.append("pepperoni")
+if type == "customizable":
+    print("Alright, we'll be right on that! Please print the toppings you want in singular form, separated by spaces: ")
+    chosen_toppings = []
+    for chosen_topping in chosen_toppings:
+        if chosen_toppping in available_toppings:
+            print("Good, we are adding " + chosen_topping + " to the pizza.")
+            final_toppings.append(chosen_topping)
+        else:
+            print("I'm sorry, that is not available. Do you want to add another instead?")
+            yes_or_no = str(input())
+            if yes_or_no == "yes":
+                print("Please add the topping.")
+                addtional_topping = str(input())
+                if additional_topping in available_toppings:
+                    final_toppings.append(additional_topping)
+            else:
+                print("Ok. Thanks for telling me.")
+else:
+    print("I'm sorry, I do not understand the word.")
+
+print("Your pizza with " + ", ".join(final_toppings) + " is ready.")
